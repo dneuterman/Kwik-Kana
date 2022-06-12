@@ -42,3 +42,12 @@ ol, ul {
     height: 100%;
     cursor: pointer;
 }
+
+.kana-list-container {
+    display: flex;
+}
+
+.kana-list-group {
+    display: flex;
+    flex-direction: column;
+}
