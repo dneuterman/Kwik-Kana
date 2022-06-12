@@ -5,10 +5,20 @@
 body {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 ol, ul {
     list-style: none;
+}
+
+.container {
+    width: 40vw;
+    aspect-ratio: 1/1;
+    border: solid 2px blue;
 }
 
 .navbar {
@@ -27,7 +37,8 @@ ol, ul {
     margin: 0 0 0 1rem;
 }
 
-.home-nav, .about-nav {
+.study-nav, .test-nav, .about-nav {
     margin: 0 1rem 0 0;
     height: 100%;
+    cursor: pointer;
 }
