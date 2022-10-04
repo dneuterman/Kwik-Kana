@@ -8,10 +8,22 @@ class TestPage {
     this.currentKana = '';
     this.currentConsonant = null;
     this.currentCharacter = null;
+    this.correctValue = 0;
+    this.incorrectValue = 0;
   }
 
   generateRandomKana() {
-    return
+    this.currentConsonant = Math.floor((Math.random()*this.kana.length));
+    this.currentCharacter = Math.floor((Math.random()*this.kana[this.currentConsonant].characters.length));
+    this.currentKana = this.kana[this.currentConsonant].characters[this.currentCharacter].character;;
+  }
+
+  checkKanaInput(kanaInput) {
+    if (kanaInput == this.kana[this.currentConsonant].characters[this.currentCharacter].romaji) {
+      this.correctValue++;
+    } else {
+      this.incorrectValue++;
+    }
   }
 
   buildPage() {
@@ -28,14 +40,30 @@ class TestPage {
 
     const kanaCharacter = document.createElement('p');
     kanaCharacter.classList.add('current-test-kana');
-    this.currentConsonant = Math.floor((Math.random()*this.kana.length));
-    this.currentCharacter = Math.floor((Math.random()*this.kana[this.currentConsonant].characters.length));
-    kanaCharacter.textContent = this.kana[this.currentConsonant].characters[this.currentCharacter].character;
+
+    this.generateRandomKana();
+    kanaCharacter.textContent = this.currentKana;
+
+    const correctCount = document.createElement('p');
+    correctCount.textContent = 'Correct: 0';
+
+    const incorrectCount = document.createElement('p');
+    incorrectCount.textContent = 'Incorrect: 0';
 
     const kanaInput = document.createElement('input');
-    kanaInput.classList.add('kana-input-field');
+    kanaInput.id = 'kana-character-input';
+    kanaInput.addEventListener('keydown', (e) => {
+      if (e.key === "Enter") {
+        this.checkKanaInput(e.target.value.toLowerCase());
+        correctCount.textContent = `Correct: ${this.correctValue}`;
+        incorrectCount.textContent = `Incorrect: ${this.incorrectValue}`;
+        e.target.value = '';
+        this.generateRandomKana();
+        kanaCharacter.textContent = this.currentKana;
+      }
+    });
 
-    testPageContainer.append(testTitle, testDescription, kanaCharacter);
+    testPageContainer.append(testTitle, testDescription, kanaCharacter, kanaInput, correctCount, incorrectCount);
 
     return testPageContainer;
   }

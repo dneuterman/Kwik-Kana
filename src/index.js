@@ -43,6 +43,7 @@ studyNav.addEventListener("click", () => {
 
 testNav.addEventListener("click", () => {
   switchPage(testPageDisplay);
+  document.getElementById('kana-character-input').focus();
 })
 
 //Initial page load
