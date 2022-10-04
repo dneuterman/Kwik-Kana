@@ -181,12 +181,10 @@ const hiraganaArray = [
         character: 'や',
         romaji: 'ya',
       },
-      null,
       {
         character: 'ゆ',
         romaji: 'yu',
       },
-      null,
       {
         character: 'よ',
         romaji: 'yo',
@@ -225,9 +223,6 @@ const hiraganaArray = [
         character: 'わ',
         romaji: 'wa',
       },
-      null,
-      null,
-      null,
       {
         character: 'を',
         romaji: 'wo',
@@ -241,10 +236,6 @@ const hiraganaArray = [
         character: 'ん',
         romaji: 'n',
       },
-      null,
-      null,
-      null,
-      null,
     ]
   },
   {

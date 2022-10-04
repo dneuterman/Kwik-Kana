@@ -1,6 +1,7 @@
 import "./style.css";
 import {AboutPage} from "./components/about";
 import {StudyPage} from "./components/study";
+import { TestPage } from "./components/test";
 
 const ABOUT_PAGE_OBJECT = {
   aboutTitle: "Hiragana and Katakana Study Tool",
@@ -12,11 +13,18 @@ const STUDY_PAGE_OBJECT = {
   studyDescription: "Study Description",
 }
 
+const TEST_PAGE_OBJECT = {
+  testTitle: "Test Page",
+  testDescription: "Test Description",
+}
+
 const content = document.getElementById("content");
 const aboutNav = document.querySelector(".about-nav");
 const studyNav = document.querySelector(".study-nav");
+const testNav = document.querySelector(".test-nav");
 const aboutPageDisplay = new AboutPage(ABOUT_PAGE_OBJECT);
 const studyPageDisplay = new StudyPage(STUDY_PAGE_OBJECT);
+const testPageDisplay = new TestPage(TEST_PAGE_OBJECT);
 
 const switchPage = page => {
   while(content.firstChild) {
@@ -31,6 +39,10 @@ aboutNav.addEventListener("click", () => {
 
 studyNav.addEventListener("click", () => {
   switchPage(studyPageDisplay);
+})
+
+testNav.addEventListener("click", () => {
+  switchPage(testPageDisplay);
 })
 
 //Initial page load
