@@ -15,11 +15,6 @@ class StudyPage {
       kanaListGroup.classList.add('kana-list-group');
       for (let j=0; j<arr[i].characters.length; j++) {
         const kanaCharacterDiv = document.createElement('div');
-        if (arr[i].characters[j] === null) {
-          kanaCharacterDiv.classList.add('kana-character-null');
-          kanaListGroup.append(kanaCharacterDiv);
-          continue;
-        }
 
         const kanaCharacter = document.createElement('p');
         kanaCharacter.classList.add('kana-character');
@@ -31,6 +26,13 @@ class StudyPage {
 
         kanaCharacterDiv.append(kanaCharacter, kanaRomaji);
         kanaListGroup.append(kanaCharacterDiv);
+      }
+
+      if (arr[i].characters.length < 5) {
+        for (let k = 0; k<(5-arr[i].characters.length); k++) {
+          const kanaCharacterDiv = document.createElement('div');
+          kanaListGroup.append(kanaCharacterDiv);
+        }
       }
 
       kanaListContainer.append(kanaListGroup);

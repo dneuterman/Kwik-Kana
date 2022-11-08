@@ -1,5 +1,11 @@
+:root {
+    font-size: 16px;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -7,8 +13,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 ol, ul {
@@ -16,8 +21,7 @@ ol, ul {
 }
 
 .container {
-    width: 40vw;
-    aspect-ratio: 1/1;
+    width: 1100px;
     border: solid 2px blue;
 }
 
@@ -26,6 +30,8 @@ ol, ul {
     justify-content: space-between;
     align-items: center;
     background-color: red;
+    font-size: 2rem;
+    padding: 3rem 0.5rem;
 }
 
 .navigation {
@@ -35,6 +41,7 @@ ol, ul {
 
 .kana-logo {
     margin: 0 0 0 1rem;
+
 }
 
 .study-nav, .test-nav, .about-nav {
@@ -45,9 +52,21 @@ ol, ul {
 
 .kana-list-container {
     display: flex;
+    flex-direction: column;
 }
 
 .kana-list-group {
     display: flex;
+    align-items: stretch;
+}
+
+.kana-list-group > div {
+    display: flex;
     flex-direction: column;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px green;
+    font-size: 3rem;
 }
