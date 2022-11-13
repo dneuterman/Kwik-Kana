@@ -78,23 +78,23 @@ const hiraganaArray = [
     consonant: 't',
     characters: [
       {
-        character: 'さ',
+        character: 'た',
         romaji: 'ta',
       },
       {
-        character: 'し',
+        character: 'ち',
         romaji: 'chi',
       },
       {
-        character: 'す',
+        character: 'つ',
         romaji: 'tsu',
       },
       {
-        character: 'せ',
+        character: 'て',
         romaji: 'te',
       },
       {
-        character: 'そ',
+        character: 'と',
         romaji: 'to',
       },
     ]

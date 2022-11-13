@@ -86,3 +86,7 @@ ol, ul {
     justify-content: center;
     height: 50vh;
 }
+
+.current-test-kana {
+    font-size: 3rem;
+}
