@@ -10,8 +10,6 @@ const ABOUT_PAGE_OBJECT = {
 }
 
 const STUDY_PAGE_OBJECT = {
-  studyTitle: "Study Page",
-  studyDescription: "Study Description",
   kanaArrays: [hiraganaArray, katakanaArray],
 }
 

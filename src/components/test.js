@@ -52,6 +52,7 @@ class TestPage {
 
     const kanaInput = document.createElement('input');
     kanaInput.id = 'kana-character-input';
+    kanaInput.setAttribute('autocomplete', 'off');
     kanaInput.addEventListener('keydown', (e) => {
       if (e.key === "Enter") {
         this.checkKanaInput(e.target.value.toLowerCase());

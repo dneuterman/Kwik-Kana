@@ -1,16 +1,18 @@
 import {hiraganaArray} from "./kanaList";
 
 class StudyPage {
-  constructor({studyTitle, studyDescription, kanaArrays}) {
-    this.studyTitle = studyTitle;
-    this.studyDescription = studyDescription;
+  constructor({kanaArrays}) {
     this.hiragana = kanaArrays[0];
     this.katakana = kanaArrays[1];
   }
 
-  listKanaTable(arr) {
+  listKanaTable(arr, kanaTitleName) {
     const kanaList = document.createElement('div');
     kanaList.classList.add('kana-list');
+    const kanaTitle = document.createElement('h2');
+    kanaTitle.classList.add('kana-title');
+    kanaTitle.textContent = kanaTitleName;
+    kanaList.append(kanaTitle);
     for (let i=0; i<arr.length; i++) {
       const kanaListRow = document.createElement('div');
       kanaListRow.classList.add('kana-list-row');
@@ -44,19 +46,11 @@ class StudyPage {
     const studyPageContainer = document.createElement('div');
     studyPageContainer.classList.add('study-page-container');
 
-    const studyTitle = document.createElement('h2');
-    studyTitle.classList.add('study-title');
-    studyTitle.textContent = this.studyTitle;
-
-    const studyDescription = document.createElement('p');
-    studyDescription.classList.add('study-description');
-    studyDescription.textContent = this.studyDescription;
-
     const kanaListContainer = document.createElement('div');
     kanaListContainer.classList.add('kana-list-container');
-    kanaListContainer.append(this.listKanaTable(this.hiragana), this.listKanaTable(this.katakana))
+    kanaListContainer.append(this.listKanaTable(this.hiragana, "Hiragana"), this.listKanaTable(this.katakana, "Katakana"))
 
-    studyPageContainer.append(studyTitle, studyDescription, kanaListContainer);
+    studyPageContainer.append(kanaListContainer);
 
     return studyPageContainer;
   }

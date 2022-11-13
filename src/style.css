@@ -23,7 +23,6 @@ ol, ul {
 .container {
     max-width: 1920px;
     width: 100%;
-    border: solid 2px blue;
 }
 
 .navbar {
@@ -75,4 +74,12 @@ ol, ul {
     align-items: center;
     border: solid 1px green;
     font-size: 3rem;
+}
+
+.test-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
 }
