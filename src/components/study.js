@@ -1,18 +1,19 @@
 import {hiraganaArray} from "./kanaList";
 
 class StudyPage {
-  constructor({studyTitle, studyDescription}) {
+  constructor({studyTitle, studyDescription, kanaArrays}) {
     this.studyTitle = studyTitle;
     this.studyDescription = studyDescription;
-    this.hiragana = this.listKanaTable(hiraganaArray);
+    this.hiragana = kanaArrays[0];
+    this.katakana = kanaArrays[1];
   }
 
   listKanaTable(arr) {
-    const kanaListContainer = document.createElement('div');
-    kanaListContainer.classList.add('kana-list-container');
+    const kanaList = document.createElement('div');
+    kanaList.classList.add('kana-list');
     for (let i=0; i<arr.length; i++) {
-      const kanaListGroup = document.createElement('div');
-      kanaListGroup.classList.add('kana-list-group');
+      const kanaListRow = document.createElement('div');
+      kanaListRow.classList.add('kana-list-row');
       for (let j=0; j<arr[i].characters.length; j++) {
         const kanaCharacterDiv = document.createElement('div');
 
@@ -25,20 +26,18 @@ class StudyPage {
         kanaRomaji.textContent = `${arr[i].characters[j].romaji}`;
 
         kanaCharacterDiv.append(kanaCharacter, kanaRomaji);
-        kanaListGroup.append(kanaCharacterDiv);
+        kanaListRow.append(kanaCharacterDiv);
       }
 
       if (arr[i].characters.length < 5) {
         for (let k = 0; k<(5-arr[i].characters.length); k++) {
           const kanaCharacterDiv = document.createElement('div');
-          kanaListGroup.append(kanaCharacterDiv);
+          kanaListRow.append(kanaCharacterDiv);
         }
       }
-
-      kanaListContainer.append(kanaListGroup);
+      kanaList.append(kanaListRow);
     }
-
-    return kanaListContainer;
+    return kanaList;
   }
 
   buildPage() {
@@ -53,7 +52,11 @@ class StudyPage {
     studyDescription.classList.add('study-description');
     studyDescription.textContent = this.studyDescription;
 
-    studyPageContainer.append(studyTitle, studyDescription, this.hiragana);
+    const kanaListContainer = document.createElement('div');
+    kanaListContainer.classList.add('kana-list-container');
+    kanaListContainer.append(this.listKanaTable(this.hiragana), this.listKanaTable(this.katakana))
+
+    studyPageContainer.append(studyTitle, studyDescription, kanaListContainer);
 
     return studyPageContainer;
   }

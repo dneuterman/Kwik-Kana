@@ -53,15 +53,20 @@ ol, ul {
 
 .kana-list-container {
     display: flex;
-    flex-direction: column;
 }
 
-.kana-list-group {
+.kana-list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.kana-list-row {
     display: flex;
     align-items: stretch;
 }
 
-.kana-list-group > div {
+.kana-list-row > div {
     display: flex;
     flex-direction: column;
     width: 100%;

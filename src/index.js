@@ -2,6 +2,7 @@ import "./style.css";
 import {AboutPage} from "./components/about";
 import {StudyPage} from "./components/study";
 import { TestPage } from "./components/test";
+import {hiraganaArray, katakanaArray} from "./components/kanaList";
 
 const ABOUT_PAGE_OBJECT = {
   aboutTitle: "Hiragana and Katakana Study Tool",
@@ -11,11 +12,13 @@ const ABOUT_PAGE_OBJECT = {
 const STUDY_PAGE_OBJECT = {
   studyTitle: "Study Page",
   studyDescription: "Study Description",
+  kanaArrays: [hiraganaArray, katakanaArray],
 }
 
 const TEST_PAGE_OBJECT = {
   testTitle: "Test Page",
   testDescription: "Test Description",
+  //kanaArrays: [hiraganaArray, katakanaArray],
 }
 
 const content = document.getElementById("content");
