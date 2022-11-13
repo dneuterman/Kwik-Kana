@@ -365,4 +365,371 @@ const hiraganaArray = [
   },
 ]
 
-export {hiraganaArray};
+const katakanaArray = [
+  {
+    consonant: '-',
+    characters: [
+      {
+        character: 'ア',
+        romaji: 'a',
+      },
+      {
+        character: 'イ',
+        romaji: 'i',
+      },
+      {
+        character: 'ウ',
+        romaji: 'u',
+      },
+      {
+        character: 'エ',
+        romaji: 'e',
+      },
+      {
+        character: 'オ',
+        romaji: 'o',
+      },
+    ]
+  },
+  {
+    consonant: 'k',
+    characters: [
+      {
+        character: 'カ',
+        romaji: 'ka',
+      },
+      {
+        character: 'キ',
+        romaji: 'ki',
+      },
+      {
+        character: 'ク',
+        romaji: 'ku',
+      },
+      {
+        character: 'ケ',
+        romaji: 'ke',
+      },
+      {
+        character: 'コ',
+        romaji: 'ko',
+      },
+    ]
+  },
+  {
+    consonant: 's',
+    characters: [
+      {
+        character: 'サ',
+        romaji: 'sa',
+      },
+      {
+        character: 'シ',
+        romaji: 'shi',
+      },
+      {
+        character: 'ス',
+        romaji: 'su',
+      },
+      {
+        character: 'セ',
+        romaji: 'se',
+      },
+      {
+        character: 'ソ',
+        romaji: 'so',
+      },
+    ]
+  },
+  {
+    consonant: 't',
+    characters: [
+      {
+        character: 'タ',
+        romaji: 'ta',
+      },
+      {
+        character: 'チ',
+        romaji: 'chi',
+      },
+      {
+        character: 'ツ',
+        romaji: 'tsu',
+      },
+      {
+        character: 'テ',
+        romaji: 'te',
+      },
+      {
+        character: 'ト',
+        romaji: 'to',
+      },
+    ]
+  },
+  {
+    consonant: 'n',
+    characters: [
+      {
+        character: 'ナ',
+        romaji: 'na',
+      },
+      {
+        character: 'ニ',
+        romaji: 'ni',
+      },
+      {
+        character: 'ヌ',
+        romaji: 'nu',
+      },
+      {
+        character: 'ネ',
+        romaji: 'ne',
+      },
+      {
+        character: 'ノ',
+        romaji: 'no',
+      },
+    ]
+  },
+  {
+    consonant: 'h',
+    characters: [
+      {
+        character: 'ハ',
+        romaji: 'ha',
+      },
+      {
+        character: 'ヒ',
+        romaji: 'hi',
+      },
+      {
+        character: 'フ',
+        romaji: 'fu',
+      },
+      {
+        character: 'ヘ',
+        romaji: 'he',
+      },
+      {
+        character: 'ホ',
+        romaji: 'ho',
+      },
+    ]
+  },
+  {
+    consonant: 'm',
+    characters: [
+      {
+        character: 'マ',
+        romaji: 'ma',
+      },
+      {
+        character: 'ミ',
+        romaji: 'mi',
+      },
+      {
+        character: 'ム',
+        romaji: 'mu',
+      },
+      {
+        character: 'メ',
+        romaji: 'me',
+      },
+      {
+        character: 'モ',
+        romaji: 'mo',
+      },
+    ]
+  },
+  {
+    consonant: 'y',
+    characters: [
+      {
+        character: 'ヤ',
+        romaji: 'ya',
+      },
+      {
+        character: 'ユ',
+        romaji: 'yu',
+      },
+      {
+        character: 'ヨ',
+        romaji: 'yo',
+      },
+    ]
+  },
+  {
+    consonant: 'r',
+    characters: [
+      {
+        character: 'ラ',
+        romaji: 'ra',
+      },
+      {
+        character: 'ラ',
+        romaji: 'ri',
+      },
+      {
+        character: 'ラ',
+        romaji: 'ru',
+      },
+      {
+        character: 'レ',
+        romaji: 're',
+      },
+      {
+        character: 'ロ',
+        romaji: 'ro',
+      },
+    ]
+  },
+  {
+    consonant: 'w',
+    characters: [
+      {
+        character: 'ワ',
+        romaji: 'wa',
+      },
+      {
+        character: 'ヲ',
+        romaji: 'wo',
+      },
+    ]
+  },
+  {
+    consonant: '(n)',
+    characters: [
+      {
+        character: 'ン',
+        romaji: 'n',
+      },
+    ]
+  },
+  {
+    consonant: 'g',
+    characters: [
+      {
+        character: 'ガ',
+        romaji: 'ga',
+      },
+      {
+        character: 'ギ',
+        romaji: 'gi',
+      },
+      {
+        character: 'グ',
+        romaji: 'gu',
+      },
+      {
+        character: 'ゲ',
+        romaji: 'ge',
+      },
+      {
+        character: 'ゴ',
+        romaji: 'go',
+      },
+    ]
+  },
+  {
+    consonant: 'z',
+    characters: [
+      {
+        character: 'ザ',
+        romaji: 'za',
+      },
+      {
+        character: 'ジ',
+        romaji: 'ji',
+      },
+      {
+        character: 'ズ',
+        romaji: 'zu',
+      },
+      {
+        character: 'ゼ',
+        romaji: 'ze',
+      },
+      {
+        character: 'ゾ',
+        romaji: 'zo',
+      },
+    ]
+  },
+  {
+    consonant: 'd',
+    characters: [
+      {
+        character: 'ダ',
+        romaji: 'da',
+      },
+      {
+        character: 'ヂ',
+        romaji: 'ji',
+      },
+      {
+        character: 'ヅ',
+        romaji: 'zu',
+      },
+      {
+        character: 'デ',
+        romaji: 'de',
+      },
+      {
+        character: 'ド',
+        romaji: 'do',
+      },
+    ]
+  },
+  {
+    consonant: 'b',
+    characters: [
+      {
+        character: 'バ',
+        romaji: 'ba',
+      },
+      {
+        character: 'ビ',
+        romaji: 'bi',
+      },
+      {
+        character: 'ブ',
+        romaji: 'bu',
+      },
+      {
+        character: 'ベ',
+        romaji: 'be',
+      },
+      {
+        character: 'ボ',
+        romaji: 'bo',
+      },
+    ]
+  },
+  {
+    consonant: 'p',
+    characters: [
+      {
+        character: 'パ',
+        romaji: 'pa',
+      },
+      {
+        character: 'ピ',
+        romaji: 'pi',
+      },
+      {
+        character: 'プ',
+        romaji: 'pu',
+      },
+      {
+        character: 'ペ',
+        romaji: 'pe',
+      },
+      {
+        character: 'ポ',
+        romaji: 'po',
+      },
+    ]
+  },
+]
+
+export {hiraganaArray, katakanaArray};
