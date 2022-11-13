@@ -1,10 +1,8 @@
-import {hiraganaArray} from "./kanaList";
-
 class TestPage {
-  constructor({testTitle, testDescription}) {
+  constructor({testTitle, testDescription, kanaArray}) {
     this.testTitle = testTitle;
     this.testDescription = testDescription;
-    this.kana = hiraganaArray;
+    this.kana = kanaArray;
     this.currentKana = '';
     this.currentConsonant = null;
     this.currentCharacter = null;
@@ -38,6 +36,8 @@ class TestPage {
     testDescription.classList.add('test-description');
     testDescription.textContent = this.testDescription;
 
+    const kanaTestDiv = document.createElement('div');
+
     const kanaCharacter = document.createElement('p');
     kanaCharacter.classList.add('current-test-kana');
 
@@ -64,7 +64,9 @@ class TestPage {
       }
     });
 
-    testPageContainer.append(testTitle, testDescription, kanaCharacter, kanaInput, correctCount, incorrectCount);
+    kanaTestDiv.append(kanaCharacter, kanaInput, correctCount, incorrectCount)
+
+    testPageContainer.append(testTitle, testDescription, kanaTestDiv);
 
     return testPageContainer;
   }

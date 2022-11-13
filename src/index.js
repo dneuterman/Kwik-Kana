@@ -14,9 +14,9 @@ const STUDY_PAGE_OBJECT = {
 }
 
 const TEST_PAGE_OBJECT = {
-  testTitle: "Test Page",
-  testDescription: "Test Description",
-  //kanaArrays: [hiraganaArray, katakanaArray],
+  testTitle: "Test Your Knowledge",
+  testDescription: "Enter the correct romaji characters that are associated with the shown kana character below",
+  kanaArray: [...hiraganaArray, ...katakanaArray],
 }
 
 const content = document.getElementById("content");
