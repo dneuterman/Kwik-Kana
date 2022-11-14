@@ -27,25 +27,34 @@ const aboutPageDisplay = new AboutPage(ABOUT_PAGE_OBJECT);
 const studyPageDisplay = new StudyPage(STUDY_PAGE_OBJECT);
 const testPageDisplay = new TestPage(TEST_PAGE_OBJECT);
 
-const switchPage = page => {
+const switchPage = (page, selection) => {
+  updateActiveLink(selection)
   while(content.firstChild) {
     content.removeChild(content.firstChild);
   }
   content.append(page.buildPage());
 }
 
-aboutNav.addEventListener("click", () => {
-  switchPage(aboutPageDisplay);
+const updateActiveLink = (selection) => {
+  const activeLink = selection;
+  aboutNav.classList.remove("active-link");
+  studyNav.classList.remove("active-link");
+  testNav.classList.remove("active-link");
+  activeLink.classList.add("active-link");
+}
+
+aboutNav.addEventListener("click", (e) => {
+  switchPage(aboutPageDisplay, e.currentTarget);
 })
 
-studyNav.addEventListener("click", () => {
-  switchPage(studyPageDisplay);
+studyNav.addEventListener("click", (e) => {
+  switchPage(studyPageDisplay, e.currentTarget);
 })
 
-testNav.addEventListener("click", () => {
-  switchPage(testPageDisplay);
+testNav.addEventListener("click", (e) => {
+  switchPage(testPageDisplay, e.currentTarget);
   document.getElementById('kana-character-input').focus();
 })
 
 //Initial page load
-switchPage(aboutPageDisplay);
+switchPage(aboutPageDisplay, aboutNav);

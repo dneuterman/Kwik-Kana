@@ -34,6 +34,7 @@ class StudyPage {
       if (arr[i].characters.length < 5) {
         for (let k = 0; k<(5-arr[i].characters.length); k++) {
           const kanaCharacterDiv = document.createElement('div');
+          kanaCharacterDiv.classList.add('empty-kana-space');
           kanaListRow.append(kanaCharacterDiv);
         }
       }

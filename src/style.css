@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
 :root {
     font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    --primary-color-100: #D64F4F;
+    --primary-color-200: #84818C;
+    --secondary-color-100: #EDEDED;
+    --secondary-color-200: #FFFFFF;
 }
 
 *, *::before, *::after {
@@ -14,6 +21,8 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    background-color: var(--primary-color-200);
+    color: var(--secondary-color-100);
 }
 
 ol, ul {
@@ -29,9 +38,9 @@ ol, ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: red;
     font-size: 2rem;
-    padding: 3rem 0.5rem;
+    padding: 2rem 0.5rem;
+    color: var(--secondary-color-100)
 }
 
 .navigation {
@@ -39,8 +48,22 @@ ol, ul {
     justify-content: space-around;
 }
 
+.navigation li {
+    padding: 0.25rem 0;
+}
+
+.navigation li:hover {
+    box-shadow: 0 0.3rem 0 0 var(--primary-color-100);
+}
+
+.active-link {
+    box-shadow: 0 0.3rem 0 0 var(--primary-color-100);
+}
+
 .kana-logo {
     margin: 0 0 0 1rem;
+    font-weight: 700;
+    font-size: 4rem;
 
 }
 
@@ -54,15 +77,26 @@ ol, ul {
     display: flex;
 }
 
+.kana-title {
+    text-align: center;
+    background-color: var(--primary-color-100);
+    padding: 1rem;
+    font-size: 2rem;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    margin: 0 0.5rem;
+}
+
 .kana-list {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    margin: 1rem;
 }
 
 .kana-list-row {
     display: flex;
     align-items: stretch;
+    padding: 0.5rem;
 }
 
 .kana-list-row > div {
@@ -70,10 +104,18 @@ ol, ul {
     flex-direction: column;
     width: 100%;
     aspect-ratio: 1 / 1;
+    margin: 0 0.5rem;
     justify-content: center;
     align-items: center;
-    border: solid 1px green;
-    font-size: 3rem;
+    font-size: 1.5rem;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    background-color: var(--secondary-color-100);
+    color: var(--primary-color-100);
+    border-radius: 0.5rem;
+}
+
+.empty-kana-space {
+    visibility: hidden;
 }
 
 .test-page-container, .test-page-container div {
@@ -84,9 +126,20 @@ ol, ul {
 
 .test-page-container div {
     justify-content: center;
-    height: 50vh;
+    height: 40vh;
+    min-width: 250px;
 }
 
 .current-test-kana {
-    font-size: 3rem;
+    font-size: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    background-color: var(--secondary-color-100);
+    color: var(--primary-color-100);
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
 }
