@@ -25,6 +25,8 @@ class TestPage {
   }
 
   buildPage() {
+    this.correctValue = 0;
+    this.incorrectValue = 0;
     const testPageContainer = document.createElement('div');
     testPageContainer.classList.add('test-page-container');
 
