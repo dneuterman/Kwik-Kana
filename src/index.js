@@ -23,6 +23,8 @@ const content = document.getElementById("content");
 const aboutNav = document.querySelector(".about-nav");
 const studyNav = document.querySelector(".study-nav");
 const testNav = document.querySelector(".test-nav");
+const navigation = document.querySelector(".navigation");
+const mobileMenuButton = document.querySelector(".mobile-menu");
 const aboutPageDisplay = new AboutPage(ABOUT_PAGE_OBJECT);
 const studyPageDisplay = new StudyPage(STUDY_PAGE_OBJECT);
 const testPageDisplay = new TestPage(TEST_PAGE_OBJECT);
@@ -43,17 +45,27 @@ const updateActiveLink = (selection) => {
   activeLink.classList.add("active-link");
 }
 
+const toggleSidebarMenu = () => {
+  navigation.classList.toggle("active-mobile");
+  mobileMenuButton.classList.toggle("active-mobile");
+}
+
+mobileMenuButton.addEventListener("click", toggleSidebarMenu)
+
 aboutNav.addEventListener("click", (e) => {
   switchPage(aboutPageDisplay, e.currentTarget);
+  toggleSidebarMenu();
 })
 
 studyNav.addEventListener("click", (e) => {
   switchPage(studyPageDisplay, e.currentTarget);
+  toggleSidebarMenu();
 })
 
 testNav.addEventListener("click", (e) => {
   switchPage(testPageDisplay, e.currentTarget);
   document.getElementById('kana-character-input').focus();
+  toggleSidebarMenu();
 })
 
 //Initial page load

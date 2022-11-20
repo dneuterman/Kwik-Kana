@@ -43,6 +43,17 @@ ol, ul {
     color: var(--secondary-color-100);
 }
 
+.mobile-menu {
+    display: none;
+    color: var(--secondary-color-100);
+    background-color: var(--primary-color-100);
+    border: solid 2px var(--primary-color-100);
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0 1rem 0 0;
+}
+
 .navigation {
     display: flex;
     justify-content: space-around;
@@ -153,4 +164,51 @@ ol, ul {
     width: 100%;
     padding: 0.5rem 0.25rem;
     font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        position: fixed;
+        left: 100%;
+        top: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: var(--secondary-color-100);
+        color: var(--primary-color-100);
+        height: 100vh;
+        width: 30vh;
+    }
+
+    .navigation.active-mobile {
+        transform: translateX(-100%);
+    }
+
+    .mobile-menu {
+        display: block;
+        z-index: 10;
+    }
+
+    .active-link {
+        color: var(--secondary-color-100);
+        background-color: var(--primary-color-100);
+        box-shadow: none;
+    }
+
+    .navigation li {
+        margin: 0;
+        padding: 0;
+        flex-basis: 0;
+    }
+
+    .navigation li:nth-child(1) {
+        margin: 9rem 0 0 0;
+    }
+
+    .navigation li:hover {
+        box-shadow: none;
+    }
+
+    .kana-list-container {
+        flex-direction: column;
+    }
 }
