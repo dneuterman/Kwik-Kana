@@ -9,6 +9,7 @@ const ABOUT_PAGE_OBJECT = {
   aboutDescription: "A useful tool to help you study and test your knowledge. Click study for quick Hiragana and Katakana references. Click test to practice your Kana. Have fun!",
 }
 
+//creates filter for kana array
 const STUDY_PAGE_OBJECT = {
   kanaArrays: [hiraganaArray, katakanaArray],
 }
